@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="silly.png">
+    <form action="index.html" onsubmit="displayInfo(); return false">
+        <fieldset>
+            <legend>tell me your secrets :3</legend>
+            <label for="name">Name: </label>
+            <input id="name" type="text" class="input" onblur="nturningRed()" onfocus="nturningGreen()"><br>
+
+            <label for="pname">Preferred name: </label>
+            <input id="pname" type="text" class="input" onblur="pnturningRed()" onfocus="pnturningGreen()"><br>
+
+            <label for="sex">Sex: </label>
+                <select id="sex" class="input">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="sikret">Prefer not to mention</option>
+                </select><br>
+
+            <label for="pass">Password [what if you told me C;]: </label>
+            <input id="pass" type="password" class="input" onblur = "pturningRed()" onfocus = "pturningGreen()"><br>
+
+            <label for="mail">Email!:</label>
+            <input id="mail" type="email" class="input" onblur = "mturningRed()" onfocus = "mturningGreen()"><br>
+
+            <label for="address">Let me know where you live /lh /nonthreateningly but kind of threateningly: </label>
+            <input id="address" type="text" class="input" onblur = "aturningRed()" onfocus = "aturningGreen()"><br>
+
+            <label for="interests">What are your interests? [or who? hihi eme lang]: </label>
+            <input id="interests" type="text" class="input" onblur = "iturningRed()" onfocus="iturningGreen()"><br>
+
+            <input type="reset" onclick="reSet()">
+            <input type="submit">
+        </fieldset>
+
+       
+
+        <fieldset>
+        <legend>let me output it for you <3</legend>
+        <h3 id="showName"></h3>
+        <h3 id="showPname"></h3>
+        <h3 id="showSex"></h3>
+        <h3 id="showPass"></h3>
+        <h3 id="showMail"></h3>
+        <h3 id="showAdd"></h3>
+        <h3 id="showInter"></h3>
+        </fieldset>
+
+    </form>
+
+    <script>
+        function reSet() {
+            document.getElementById("showName").innerHTML = "";
+            document.getElementById("showPname").innerHTML = "";
+            document.getElementById("showSex").innerHTML = "";
+            document.getElementById("showPass").innerHTML = "";
+            document.getElementById("showMail").innerHTML = "";
+            document.getElementById("name").style.border = "1px solid black";
+            document.getElementById("pname").style.border = "1px solid black";
+            document.getElementById("password").style.border = "1px solid black";
+            document.getElementById("mail").style.border = "1px solid black";
+            document.getElementById("address").style.border = "1px solid black";
+            document.getElementById("interests").style.border = "1px solid black";
+        }
+        function displayInfo(){
+            document.getElementById("showName").innerHTML = "hallur, " + document.getElementById("name").value;
+            document.getElementById("showPname").innerHTML = "but you like " + document.getElementById("pname").value + " better?";
+            document.getElementById("showSex").innerHTML = "your sex is: " + document.getElementById("sex").value;
+            document.getElementById("showPass").innerHTML = "to confirm, your password is " + document.getElementById("pass").value;
+            document.getElementById("showMail").innerHTML = "sendan na kita ng love letter sa " + document.getElementById("mail").value;
+            document.getElementById("showAdd").innerHTML = "magkain tayo sa " + document.getElementById("address").value;
+            document.getElementById("showInter").innerHTML = "your interests are: " + document.getElementById("interests").value;
+        }
+
+        function nturningRed(){
+            var inputs = document.getElementById("name");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid red";
+            }
+        }
+        function nturningGreen(){
+            var inputs = document.getElementById("name");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid green";
+            }
+        }
+        function pnturningRed(){
+            var inputs = document.getElementById("pname");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid red";
+            }
+        }
+        function pnturningGreen(){
+            var inputs = document.getElementById("pname");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid green";
+            }
+        }
+        function pturningRed(){
+            var inputs = document.getElementById("pass");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid red";
+            }
+        }
+        function pturningGreen(){
+            var inputs = document.getElementById("pass");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid green";
+            }
+        }
+        function mturningRed(){
+            var inputs = document.getElementById("mail");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid red";
+            }
+        }
+        function mturningGreen(){
+            var inputs = document.getElementById("mail");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid green";
+            }
+        }
+        function aturningRed(){
+            var inputs = document.getElementById("address");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid red";
+            }
+        }
+        function aturningGreen(){
+            var inputs = document.getElementById("address");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid green";
+            }
+        }
+        function iturningRed(){
+            var inputs = document.getElementById("interests");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid red";
+            }
+        }
+        function iturningGreen(){
+            var inputs = document.getElementById("interests");
+            if(inputs.value == ""){
+                inputs.style.border = "3px solid green";
+            }
+        }
+
+    </script>
+</body>
+</html>
